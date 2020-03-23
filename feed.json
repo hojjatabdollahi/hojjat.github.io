@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Hojjat&#x27;s Blog",
+    "description": "",
+    "home_page_url": "https://hojjatabdollahi.github.io/hojjatabdollahi.github.io",
+    "feed_url": "https://hojjatabdollahi.github.io/hojjatabdollahi.github.io/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Hojjat"
+    },
+    "items": [
+    ]
+}
