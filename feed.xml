@@ -3,10 +3,113 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>1969-12-31T17:00:00-07:00</updated>
+    <updated>2020-03-23T16:56:35-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
     <id>https://hojjatabdollahi.github.io</id>
 
+    <entry>
+        <title>“Could not find valid device for node.” while eagerly executing.</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html"/>
+        <id>https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html</id>
+
+        <updated>2020-03-23T16:56:29-06:00</updated>
+            <summary>
+                <![CDATA[
+                    This cryptic error happens when the input to a function has the wrong type! Here is an example: import tensorflow as tf tf.enable_eager_execution() tf.sqrt(4) This will return a long error that basically says: InternalError: Could not find valid device for node. Node: {{node Sqrt}} =&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                This cryptic error happens when the input to a function has the wrong type!<br><br>Here is an example:<br><br><code class="language-python">import tensorflow as tf</code><br><code class="language-python">tf.enable_eager_execution()</code><br><code class="language-python">tf.sqrt(4)</code><br><br>This will return a long error that basically says:<br><br><code>InternalError: Could not find valid device for node. </code><br><code>Node: {{node Sqrt}} = Sqrt[T=DT_INT32](dummy_input) </code><br><code>All kernels registered for op Sqrt : </code><br><code> device='XLA_CPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='XLA_CPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='GPU'; T in [DT_DOUBLE] </code><br><code> device='GPU'; T in [DT_HALF] </code><br><code> device='GPU'; T in [DT_FLOAT] </code><br><code> device='CPU'; T in [DT_COMPLEX128] </code><br><code> device='CPU'; T in [DT_COMPLEX64] </code><br><code> device='CPU'; T in [DT_BFLOAT16] </code><br><code> device='CPU'; T in [DT_DOUBLE] </code><br><code> device='CPU'; T in [DT_HALF] </code><br><code> device='CPU'; T in [DT_FLOAT] </code><br><code> [Op:Sqrt] name: Sqrt/</code><br><br>If you pay close attention, it is saying the the input to the function sqrt should be one of <code>double, half, float, complex,...</code> but our input is <code>dt_int32</code> that’s the problem. This works:<br><br><code class="language-python">import tensorflow as tf</code><br><code class="language-python">tf.enable_eager_execution()</code><br><code class="language-python">tf.sqrt(4.) #notice that now the input is a float number</code>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>What does zip command do in Python?</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/what-does-zip-command-do-in-python.html"/>
+        <id>https://hojjatabdollahi.github.io/what-does-zip-command-do-in-python.html</id>
+
+        <updated>2020-03-23T16:40:11-06:00</updated>
+            <summary>
+                <![CDATA[
+                    THis is a code: A = [1, 2, 3, 4] B = [5, 6, 7, 8] C = zip (A, B) # output: (1,5), (2,6), (3,7), (4,8)test
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>THis is a code:</p>
+<p> </p>
+<pre><code class="language-python">A = [1, 2, 3, 4]</code><br><code class="language-python">B = [5, 6, 7, 8]</code><br><code class="language-python">C = zip (A, B)</code><br><code class="language-python"># output: (1,5), (2,6), (3,7), (4,8)</code></pre>
+test
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Cisco AnyConnect VPN in Linux (Ubuntu 19.10)</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/cisco-anyconnect-vpn-in-linux-ubuntu-1910.html"/>
+        <id>https://hojjatabdollahi.github.io/cisco-anyconnect-vpn-in-linux-ubuntu-1910.html</id>
+
+        <updated>2020-03-23T16:44:16-06:00</updated>
+            <summary>
+                <![CDATA[
+                    I’m writing this here for my future use. Install these: sudo apt-get install openconnect lib32ncurses6 lib32tinfo6 lib32z1 libc6-i386 libpkcs11-helper1 openvpn vpnc-scripts net-tools Download and unzip this. Go to the vpn folder and run ./vpn_install.sh then install the vpn. Finally run the vpn using: /opt/cisco/anyconnect/bin/vpnui For&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <em>I’m writing this here for my future use.</em><br><br>Install these:<br><br><code class="language-bash">sudo apt-get install openconnect lib32ncurses6 lib32tinfo6 lib32z1 libc6-i386 libpkcs11-helper1 openvpn vpnc-scripts net-tools</code><br><br>Download and unzip <a href="https://uci.service-now.com/sys_attachment.do?sys_id=3e869ef2db082b0054e7f236bf961900" target="_blank" rel="noopener noreferrer">this</a>.<br><br>Go to the vpn folder and run ./vpn_install.sh then install the vpn.<br><br>Finally run the vpn using:<br><br><code class="language-bash">/opt/cisco/anyconnect/bin/vpnui</code><br><br>For the university of Denver I use this URL to connect to:<br><br><code>https://vpn-external.du.edu:443</code><br><br>It then will ask for username and password, I use my ID number and password here.
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Running docker-compose in Google Cloud</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/running-docker-compose-in-google-cloud.html"/>
+        <id>https://hojjatabdollahi.github.io/running-docker-compose-in-google-cloud.html</id>
+
+        <updated>2020-03-23T16:50:44-06:00</updated>
+            <summary>
+                <![CDATA[
+                    I have a docker container that works fine on my machine if I run it with docker-compose but it does not work well with running it using docker run , However, when I create a container to put it on Google Cloud, the Google Cloud&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p id="9d98" class="fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp" >I have a docker container that works fine on my machine if I run it with <code>docker-compose</code> but it does not work well with running it using <code>docker run</code> , However, when I create a container to put it on Google Cloud, the Google Cloud SDK is not using <code>docker-compose</code>, here is how I fixed this problem.<br><br>First, you need to resize the hard disk. The hard disk that is being used by your instance is probably not big enough. Here I increase mine to 30GB. The hard disk name is the same as the instance name (do not add a new disk, it will not increase your root partition):<br><br><code class="language-bash">gcloud compute disks resize example-disk — size 250</code><br><br>Add your ssh public key to your instance so that you can ssh into your account from your computer.<br><br>After increasing the disk space, copy all your files into the server using <code>scp</code>.<br><br><code class="language-bash">scp * &lt;external_ip_address&gt;:~</code><br><br>Then ssh into your instance and make sure all your files are there.<br><br>Now you need to run <code>docker-compose</code> but it doesn’t exist in Google Cloud Container OS. To do that you need to first create a docker-compose container:<br><br><code class="language-bash">docker run docker/compose:1.13.0 version</code><br><br>and then run this command:<br><br><code class="language-bash">docker run --rm \</code><br><code class="language-bash"> -v /var/run/docker.sock:/var/run/docker.sock \</code><br><code class="language-bash"> -v "$PWD:$PWD" \</code><br><code class="language-bash"> -w="$PWD" \</code><br><code class="language-bash"> docker/compose:1.13.0 up</code><br><br>I copied these lines from <a href="https://cloud.google.com/community/tutorials/docker-compose-on-container-optimized-os">this tutorial</a>. But, I changed the second command because I kept getting an error saying “can not make directory /rootfs, filesystem is read-only”. That’s why I removed <code>rootfs</code> from my commands.<br><br>After running this command, your docker container should start and should work fine.</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>An alternative to &quot;watch&quot; command in Windows</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/an-alternative-to-watch-command-in-windows.html"/>
+        <id>https://hojjatabdollahi.github.io/an-alternative-to-watch-command-in-windows.html</id>
+
+        <updated>2020-03-23T16:54:41-06:00</updated>
+            <summary>
+                <![CDATA[
+                    When I’m training a network in Linux, I always have a panel in my tmux that is showing the GPU usage over all 4 GPUs. To do so, I use nvidia-smi command and to keep it updating I use watch command. So, all I need&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                When I’m training a network in Linux, I always have a panel in my tmux that is showing the GPU usage over all 4 GPUs. To do so, I use <code>nvidia-smi</code> command and to keep it updating I use <code>watch</code> command. So, all I need to write is:<br><br><code class="language-bash">watch nvidia-smi</code><br><br>In windows you do not have the <code>watch</code> command and note that <code>nvidia-smi</code> might not be part of your <code>path</code> but if you have installed everything correctly, it should be here:<br><br><code>C:\Program Files\NVIDIA Corporation\NVSMI</code><br><br>So, the alternative to <code>watch</code> in windows <strong>Powershell</strong> is using the while command:<br><br><code class="language-clike">while (1) {cls; .\nvidia-smi.exe; sleep 5}</code><br><br>However, <a href="https://github.com/markwragg/PowerShell-Watch">someone made a module for Powershell</a>, but I find it inconvenient.
+            ]]>
+        </content>
+    </entry>
 </feed>
