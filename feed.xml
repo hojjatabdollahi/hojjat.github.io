@@ -3,7 +3,7 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-03-23T17:06:42-06:00</updated>
+    <updated>2020-03-23T17:08:33-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://hojjatabdollahi.github.io/how-to-use-the-same-key-for-git-bash-and-sourcetree.html"/>
         <id>https://hojjatabdollahi.github.io/how-to-use-the-same-key-for-git-bash-and-sourcetree.html</id>
 
-        <updated>2020-03-23T17:06:36-06:00</updated>
+        <updated>2020-03-23T17:08:18-06:00</updated>
             <summary>
                 <![CDATA[
                     To create the SSH key you can use PuTTYgen. Using the following command in Git Bash create id_rsa.pub ssh-keygen -i -f public &gt; id_rsa.pub Copy the content of public and import it into Bitbucket. If you don’t know how read the “Add the public key&hellip;
