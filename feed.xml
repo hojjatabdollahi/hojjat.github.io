@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Hojjat&#x27;s Blog</title>
-    <link href="https://hojjatabdollahi.github.io/hojjatabdollahi.github.io/feed.xml" rel="self" />
-    <link href="https://hojjatabdollahi.github.io/hojjatabdollahi.github.io" />
+    <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
+    <link href="https://hojjatabdollahi.github.io" />
     <updated>1969-12-31T17:00:00-07:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
-    <id>https://hojjatabdollahi.github.io/hojjatabdollahi.github.io</id>
+    <id>https://hojjatabdollahi.github.io</id>
 
 </feed>
