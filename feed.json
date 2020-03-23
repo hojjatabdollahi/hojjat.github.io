@@ -10,18 +10,18 @@
     },
     "items": [
         {
-            "id": "https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html",
-            "url": "https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html",
-            "title": "“Could not find valid device for node.” while eagerly executing.",
-            "summary": "This cryptic error happens when the input to a function has the wrong type! Here is an example: import tensorflow as tf tf.enable_eager_execution() tf.sqrt(4) This will return a long error that basically says: InternalError: Could not find valid device for node. Node: {{node Sqrt}} =&hellip;",
-            "content_html": "This cryptic error happens when the input to a function has the wrong type!<br><br>Here is an example:<br><br><code class=\"language-python\">import tensorflow as tf</code><br><code class=\"language-python\">tf.enable_eager_execution()</code><br><code class=\"language-python\">tf.sqrt(4)</code><br><br>This will return a long error that basically says:<br><br><code>InternalError: Could not find valid device for node. </code><br><code>Node: {{node Sqrt}} = Sqrt[T=DT_INT32](dummy_input) </code><br><code>All kernels registered for op Sqrt : </code><br><code> device='XLA_CPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='XLA_CPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='GPU'; T in [DT_DOUBLE] </code><br><code> device='GPU'; T in [DT_HALF] </code><br><code> device='GPU'; T in [DT_FLOAT] </code><br><code> device='CPU'; T in [DT_COMPLEX128] </code><br><code> device='CPU'; T in [DT_COMPLEX64] </code><br><code> device='CPU'; T in [DT_BFLOAT16] </code><br><code> device='CPU'; T in [DT_DOUBLE] </code><br><code> device='CPU'; T in [DT_HALF] </code><br><code> device='CPU'; T in [DT_FLOAT] </code><br><code> [Op:Sqrt] name: Sqrt/</code><br><br>If you pay close attention, it is saying the the input to the function sqrt should be one of <code>double, half, float, complex,...</code> but our input is <code>dt_int32</code> that’s the problem. This works:<br><br><code class=\"language-python\">import tensorflow as tf</code><br><code class=\"language-python\">tf.enable_eager_execution()</code><br><code class=\"language-python\">tf.sqrt(4.) #notice that now the input is a float number</code>",
+            "id": "https://hojjatabdollahi.github.io/how-to-use-the-same-key-for-git-bash-and-sourcetree.html",
+            "url": "https://hojjatabdollahi.github.io/how-to-use-the-same-key-for-git-bash-and-sourcetree.html",
+            "title": "How to use the same key for Git Bash and Sourcetree.",
+            "summary": "To create the SSH key you can use PuTTYgen. Using the following command in Git Bash create id_rsa.pub ssh-keygen -i -f public &gt; id_rsa.pub Copy the content of public and import it into Bitbucket. If you don’t know how read the “Add the public key&hellip;",
+            "content_html": "<p>To create the SSH key you can use PuTTYgen.</p>\n<p><img class=\"post__image\" src=\"https://hojjatabdollahi.github.io/media/posts/8/1-KtLdO5GrNsCOdTDZEG8COA.png\" alt=\"\" width=\"362\" height=\"131\"></p>\n<figure class=\"post__image\">It will create private.ppk and public.<br><br>Then using the same window export to openssh and create id_rsa</figure>\n<p><img class=\"post__image\" src=\"https://hojjatabdollahi.github.io/media/posts/8/1-b3DsFrgWL6dtDjkBobGSCA.png\" alt=\"\" width=\"572\" height=\"489\"><br><br>Using the following command in Git Bash create id_rsa.pub<br><br> ssh-keygen -i -f public &gt; id_rsa.pub<br><br>Copy the content of public and import it into Bitbucket. If you don’t know how read the “Add the public key to your Bitbucket settings” section in here.<br><br>Add the code in here to your ~/.bashrc so it runs the agent every time you open Git Bash.<br><br>Now, you can push to your Bitbucket repository using Git Bash or Sourcetree without password.</p>\n<figure class=\"post__image\"></figure>",
             "author": {
                 "name": "Hojjat"
             },
             "tags": [
             ],
-            "date_published": "2020-03-23T16:56:29-06:00",
-            "date_modified": "2020-03-23T16:56:29-06:00"
+            "date_published": "2020-03-23T17:06:36-06:00",
+            "date_modified": "2020-03-23T17:06:36-06:00"
         },
         {
             "id": "https://hojjatabdollahi.github.io/what-does-zip-command-do-in-python.html",
@@ -47,9 +47,11 @@
                 "name": "Hojjat"
             },
             "tags": [
+                   "linux",
+                   "cisco"
             ],
             "date_published": "2020-03-16T16:43:00-06:00",
-            "date_modified": "2020-03-23T16:44:16-06:00"
+            "date_modified": "2020-03-23T17:01:40-06:00"
         },
         {
             "id": "https://hojjatabdollahi.github.io/running-docker-compose-in-google-cloud.html",
@@ -61,9 +63,11 @@
                 "name": "Hojjat"
             },
             "tags": [
+                   "docker",
+                   "Google"
             ],
             "date_published": "2019-04-11T16:50:00-06:00",
-            "date_modified": "2020-03-23T16:50:44-06:00"
+            "date_modified": "2020-03-23T17:02:01-06:00"
         },
         {
             "id": "https://hojjatabdollahi.github.io/an-alternative-to-watch-command-in-windows.html",
@@ -75,9 +79,60 @@
                 "name": "Hojjat"
             },
             "tags": [
+                   "windows",
+                   "powershell"
             ],
             "date_published": "2019-02-11T16:54:00-07:00",
-            "date_modified": "2020-03-23T16:54:41-06:00"
+            "date_modified": "2020-03-23T17:02:20-06:00"
+        },
+        {
+            "id": "https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html",
+            "url": "https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html",
+            "title": "“Could not find valid device for node.” while eagerly executing.",
+            "summary": "This cryptic error happens when the input to a function has the wrong type! Here is an example: import tensorflow as tf tf.enable_eager_execution() tf.sqrt(4) This will return a long error that basically says: InternalError: Could not find valid device for node. Node: {{node Sqrt}} =&hellip;",
+            "content_html": "This cryptic error happens when the input to a function has the wrong type!<br><br>Here is an example:<br><br><code class=\"language-python\">import tensorflow as tf</code><br><code class=\"language-python\">tf.enable_eager_execution()</code><br><code class=\"language-python\">tf.sqrt(4)</code><br><br>This will return a long error that basically says:<br><br><code>InternalError: Could not find valid device for node. </code><br><code>Node: {{node Sqrt}} = Sqrt[T=DT_INT32](dummy_input) </code><br><code>All kernels registered for op Sqrt : </code><br><code> device='XLA_CPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='XLA_CPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='GPU'; T in [DT_DOUBLE] </code><br><code> device='GPU'; T in [DT_HALF] </code><br><code> device='GPU'; T in [DT_FLOAT] </code><br><code> device='CPU'; T in [DT_COMPLEX128] </code><br><code> device='CPU'; T in [DT_COMPLEX64] </code><br><code> device='CPU'; T in [DT_BFLOAT16] </code><br><code> device='CPU'; T in [DT_DOUBLE] </code><br><code> device='CPU'; T in [DT_HALF] </code><br><code> device='CPU'; T in [DT_FLOAT] </code><br><code> [Op:Sqrt] name: Sqrt/</code><br><br>If you pay close attention, it is saying the the input to the function sqrt should be one of <code>double, half, float, complex,...</code> but our input is <code>dt_int32</code> that’s the problem. This works:<br><br><code class=\"language-python\">import tensorflow as tf</code><br><code class=\"language-python\">tf.enable_eager_execution()</code><br><code class=\"language-python\">tf.sqrt(4.) #notice that now the input is a float number</code>",
+            "author": {
+                "name": "Hojjat"
+            },
+            "tags": [
+                   "tensorflow"
+            ],
+            "date_published": "2019-01-29T16:56:00-07:00",
+            "date_modified": "2020-03-23T17:02:34-06:00"
+        },
+        {
+            "id": "https://hojjatabdollahi.github.io/cudnn_status_not_initialized-when-trying-to-run-keras-but-not-tensorflow.html",
+            "url": "https://hojjatabdollahi.github.io/cudnn_status_not_initialized-when-trying-to-run-keras-but-not-tensorflow.html",
+            "title": "CUDNN_STATUS_NOT_INITIALIZED when trying to run Keras, but not TensorFlow!",
+            "summary": "Curious. I could run a code in TF and it would use the GPU with absolutely no problem. But I had another code with Keras that would not run! After hours of pulling my hair out and cursing I figured it out. I have access&hellip;",
+            "content_html": "Curious. I could run a code in TF and it would use the GPU with absolutely no problem. But I had another code with Keras that would not run!<br><br>After hours of pulling my hair out and cursing I figured it out. I have access to another machine and the same Keras code was running on that one with no problems. I figured that it could be the version of the NVIDIA driver, or CUDA or CuDNN.<br><br>On the faulty machine I had installed CuDNN using the “linux archive” instead of a simple “deb” file. So, I installed CuDNN that way, but nothing changed.<br><br>The NVIDIA driver on the faulty machine was 390.77 but on the good machine was 396.54. So, I set to install NVIDIA 396 on Ubuntu 18.04.<br><br>First you need to delete your current driver:<br><br><code class=\"language-bash\">sudo apt purge nvidia-*</code><br><br>Then add the graphics card driver repository:<br><br><code class=\"language-bash\">sudo add-apt-repository ppa:graphics-drivers/ppa</code><br><br>Then you need to install the driver:<br><br><code class=\"language-bash\">sudo apt install nvidia-driver-396 nvidia-utils-396 nvidia-kernel-common-396</code><br><br>Reboot.<br><br>That’s it. After the reboot everything should be working now.",
+            "author": {
+                "name": "Hojjat"
+            },
+            "tags": [
+                   "tensorflow",
+                   "nvidia",
+                   "linux",
+                   "keras"
+            ],
+            "date_published": "2019-01-04T16:59:00-07:00",
+            "date_modified": "2020-03-23T17:03:09-06:00"
+        },
+        {
+            "id": "https://hojjatabdollahi.github.io/how-to-set-the-pythonpath-for-your-virualenv-in-windows.html",
+            "url": "https://hojjatabdollahi.github.io/how-to-set-the-pythonpath-for-your-virualenv-in-windows.html",
+            "title": "How to set the PYTHONPATH for your VirualEnv in Windows",
+            "summary": "VSCode keeps telling me “ImportError: No module named xxx”. Why? because I’m trying to run a code from a sub-folder and the module is in the parent directory. How to fix this? Well easy, add the parent directory to your PYTHONPATH. But how? There are&hellip;",
+            "content_html": "VSCode keeps telling me “ImportError: No module named xxx”. Why? because I’m trying to run a code from a sub-folder and the module is in the parent directory. How to fix this? Well easy, add the parent directory to your PYTHONPATH. But how?<br><br>There are some options out there, for example adding the absolute address to a file named .env and placing it in your root folder.<br><br>Or adding the pythonpath to your launch.json file.<br><br>But this is how I did it:<br><br>Open the activate.ps1 file in your venv/scrips/activate.ps1 and add the following to the “deactivate” function:<br><br><code>if (Test-Path env:_OLD_VIRTUAL_PATH) {</code><br><code> copy-item env:_OLD_VIRTUAL_PATH env:PATH</code><br><code> remove-item env:_OLD_VIRTUAL_PATH</code><br><code> }</code><br><br>And add this to the end of the file:<br><br><code>if (Test-Path env:PYTHONPATH) {</code><br><code> copy-item env:PYTHONPATH env:_OLD_PYTHON_PATH</code><br><code>}</code><br><code>$env:PYTHONPATH = \"$(Resolve-Path \"$env:VIRTUAL_ENV\\..\");$env:PYTHONPATH\"</code>",
+            "author": {
+                "name": "Hojjat"
+            },
+            "tags": [
+                   "windows",
+                   "python"
+            ],
+            "date_published": "2018-11-15T17:00:00-07:00",
+            "date_modified": "2020-03-23T17:01:06-06:00"
         }
     ]
 }

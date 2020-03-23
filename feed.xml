@@ -3,29 +3,33 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-03-23T16:56:35-06:00</updated>
+    <updated>2020-03-23T17:06:42-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
     <id>https://hojjatabdollahi.github.io</id>
 
     <entry>
-        <title>“Could not find valid device for node.” while eagerly executing.</title>
+        <title>How to use the same key for Git Bash and Sourcetree.</title>
         <author>
             <name>Hojjat</name>
         </author>
-        <link href="https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html"/>
-        <id>https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html</id>
+        <link href="https://hojjatabdollahi.github.io/how-to-use-the-same-key-for-git-bash-and-sourcetree.html"/>
+        <id>https://hojjatabdollahi.github.io/how-to-use-the-same-key-for-git-bash-and-sourcetree.html</id>
 
-        <updated>2020-03-23T16:56:29-06:00</updated>
+        <updated>2020-03-23T17:06:36-06:00</updated>
             <summary>
                 <![CDATA[
-                    This cryptic error happens when the input to a function has the wrong type! Here is an example: import tensorflow as tf tf.enable_eager_execution() tf.sqrt(4) This will return a long error that basically says: InternalError: Could not find valid device for node. Node: {{node Sqrt}} =&hellip;
+                    To create the SSH key you can use PuTTYgen. Using the following command in Git Bash create id_rsa.pub ssh-keygen -i -f public &gt; id_rsa.pub Copy the content of public and import it into Bitbucket. If you don’t know how read the “Add the public key&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                This cryptic error happens when the input to a function has the wrong type!<br><br>Here is an example:<br><br><code class="language-python">import tensorflow as tf</code><br><code class="language-python">tf.enable_eager_execution()</code><br><code class="language-python">tf.sqrt(4)</code><br><br>This will return a long error that basically says:<br><br><code>InternalError: Could not find valid device for node. </code><br><code>Node: {{node Sqrt}} = Sqrt[T=DT_INT32](dummy_input) </code><br><code>All kernels registered for op Sqrt : </code><br><code> device='XLA_CPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='XLA_CPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='GPU'; T in [DT_DOUBLE] </code><br><code> device='GPU'; T in [DT_HALF] </code><br><code> device='GPU'; T in [DT_FLOAT] </code><br><code> device='CPU'; T in [DT_COMPLEX128] </code><br><code> device='CPU'; T in [DT_COMPLEX64] </code><br><code> device='CPU'; T in [DT_BFLOAT16] </code><br><code> device='CPU'; T in [DT_DOUBLE] </code><br><code> device='CPU'; T in [DT_HALF] </code><br><code> device='CPU'; T in [DT_FLOAT] </code><br><code> [Op:Sqrt] name: Sqrt/</code><br><br>If you pay close attention, it is saying the the input to the function sqrt should be one of <code>double, half, float, complex,...</code> but our input is <code>dt_int32</code> that’s the problem. This works:<br><br><code class="language-python">import tensorflow as tf</code><br><code class="language-python">tf.enable_eager_execution()</code><br><code class="language-python">tf.sqrt(4.) #notice that now the input is a float number</code>
+                <p>To create the SSH key you can use PuTTYgen.</p>
+<p><img class="post__image" src="https://hojjatabdollahi.github.io/media/posts/8/1-KtLdO5GrNsCOdTDZEG8COA.png" alt="" width="362" height="131"></p>
+<figure class="post__image">It will create private.ppk and public.<br><br>Then using the same window export to openssh and create id_rsa</figure>
+<p><img class="post__image" src="https://hojjatabdollahi.github.io/media/posts/8/1-b3DsFrgWL6dtDjkBobGSCA.png" alt="" width="572" height="489"><br><br>Using the following command in Git Bash create id_rsa.pub<br><br> ssh-keygen -i -f public &gt; id_rsa.pub<br><br>Copy the content of public and import it into Bitbucket. If you don’t know how read the “Add the public key to your Bitbucket settings” section in here.<br><br>Add the code in here to your ~/.bashrc so it runs the agent every time you open Git Bash.<br><br>Now, you can push to your Bitbucket repository using Git Bash or Sourcetree without password.</p>
+<figure class="post__image"></figure>
             ]]>
         </content>
     </entry>
@@ -59,8 +63,10 @@ test
         </author>
         <link href="https://hojjatabdollahi.github.io/cisco-anyconnect-vpn-in-linux-ubuntu-1910.html"/>
         <id>https://hojjatabdollahi.github.io/cisco-anyconnect-vpn-in-linux-ubuntu-1910.html</id>
+            <category term="linux"/>
+            <category term="cisco"/>
 
-        <updated>2020-03-23T16:44:16-06:00</updated>
+        <updated>2020-03-23T17:01:40-06:00</updated>
             <summary>
                 <![CDATA[
                     I’m writing this here for my future use. Install these: sudo apt-get install openconnect lib32ncurses6 lib32tinfo6 lib32z1 libc6-i386 libpkcs11-helper1 openvpn vpnc-scripts net-tools Download and unzip this. Go to the vpn folder and run ./vpn_install.sh then install the vpn. Finally run the vpn using: /opt/cisco/anyconnect/bin/vpnui For&hellip;
@@ -79,8 +85,10 @@ test
         </author>
         <link href="https://hojjatabdollahi.github.io/running-docker-compose-in-google-cloud.html"/>
         <id>https://hojjatabdollahi.github.io/running-docker-compose-in-google-cloud.html</id>
+            <category term="docker"/>
+            <category term="Google"/>
 
-        <updated>2020-03-23T16:50:44-06:00</updated>
+        <updated>2020-03-23T17:02:01-06:00</updated>
             <summary>
                 <![CDATA[
                     I have a docker container that works fine on my machine if I run it with docker-compose but it does not work well with running it using docker run , However, when I create a container to put it on Google Cloud, the Google Cloud&hellip;
@@ -99,8 +107,10 @@ test
         </author>
         <link href="https://hojjatabdollahi.github.io/an-alternative-to-watch-command-in-windows.html"/>
         <id>https://hojjatabdollahi.github.io/an-alternative-to-watch-command-in-windows.html</id>
+            <category term="windows"/>
+            <category term="powershell"/>
 
-        <updated>2020-03-23T16:54:41-06:00</updated>
+        <updated>2020-03-23T17:02:20-06:00</updated>
             <summary>
                 <![CDATA[
                     When I’m training a network in Linux, I always have a panel in my tmux that is showing the GPU usage over all 4 GPUs. To do so, I use nvidia-smi command and to keep it updating I use watch command. So, all I need&hellip;
@@ -109,6 +119,73 @@ test
         <content type="html">
             <![CDATA[
                 When I’m training a network in Linux, I always have a panel in my tmux that is showing the GPU usage over all 4 GPUs. To do so, I use <code>nvidia-smi</code> command and to keep it updating I use <code>watch</code> command. So, all I need to write is:<br><br><code class="language-bash">watch nvidia-smi</code><br><br>In windows you do not have the <code>watch</code> command and note that <code>nvidia-smi</code> might not be part of your <code>path</code> but if you have installed everything correctly, it should be here:<br><br><code>C:\Program Files\NVIDIA Corporation\NVSMI</code><br><br>So, the alternative to <code>watch</code> in windows <strong>Powershell</strong> is using the while command:<br><br><code class="language-clike">while (1) {cls; .\nvidia-smi.exe; sleep 5}</code><br><br>However, <a href="https://github.com/markwragg/PowerShell-Watch">someone made a module for Powershell</a>, but I find it inconvenient.
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>“Could not find valid device for node.” while eagerly executing.</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html"/>
+        <id>https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html</id>
+            <category term="tensorflow"/>
+
+        <updated>2020-03-23T17:02:34-06:00</updated>
+            <summary>
+                <![CDATA[
+                    This cryptic error happens when the input to a function has the wrong type! Here is an example: import tensorflow as tf tf.enable_eager_execution() tf.sqrt(4) This will return a long error that basically says: InternalError: Could not find valid device for node. Node: {{node Sqrt}} =&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                This cryptic error happens when the input to a function has the wrong type!<br><br>Here is an example:<br><br><code class="language-python">import tensorflow as tf</code><br><code class="language-python">tf.enable_eager_execution()</code><br><code class="language-python">tf.sqrt(4)</code><br><br>This will return a long error that basically says:<br><br><code>InternalError: Could not find valid device for node. </code><br><code>Node: {{node Sqrt}} = Sqrt[T=DT_INT32](dummy_input) </code><br><code>All kernels registered for op Sqrt : </code><br><code> device='XLA_CPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='XLA_CPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='GPU'; T in [DT_DOUBLE] </code><br><code> device='GPU'; T in [DT_HALF] </code><br><code> device='GPU'; T in [DT_FLOAT] </code><br><code> device='CPU'; T in [DT_COMPLEX128] </code><br><code> device='CPU'; T in [DT_COMPLEX64] </code><br><code> device='CPU'; T in [DT_BFLOAT16] </code><br><code> device='CPU'; T in [DT_DOUBLE] </code><br><code> device='CPU'; T in [DT_HALF] </code><br><code> device='CPU'; T in [DT_FLOAT] </code><br><code> [Op:Sqrt] name: Sqrt/</code><br><br>If you pay close attention, it is saying the the input to the function sqrt should be one of <code>double, half, float, complex,...</code> but our input is <code>dt_int32</code> that’s the problem. This works:<br><br><code class="language-python">import tensorflow as tf</code><br><code class="language-python">tf.enable_eager_execution()</code><br><code class="language-python">tf.sqrt(4.) #notice that now the input is a float number</code>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>CUDNN_STATUS_NOT_INITIALIZED when trying to run Keras, but not TensorFlow!</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/cudnn_status_not_initialized-when-trying-to-run-keras-but-not-tensorflow.html"/>
+        <id>https://hojjatabdollahi.github.io/cudnn_status_not_initialized-when-trying-to-run-keras-but-not-tensorflow.html</id>
+            <category term="tensorflow"/>
+            <category term="nvidia"/>
+            <category term="linux"/>
+            <category term="keras"/>
+
+        <updated>2020-03-23T17:03:09-06:00</updated>
+            <summary>
+                <![CDATA[
+                    Curious. I could run a code in TF and it would use the GPU with absolutely no problem. But I had another code with Keras that would not run! After hours of pulling my hair out and cursing I figured it out. I have access&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                Curious. I could run a code in TF and it would use the GPU with absolutely no problem. But I had another code with Keras that would not run!<br><br>After hours of pulling my hair out and cursing I figured it out. I have access to another machine and the same Keras code was running on that one with no problems. I figured that it could be the version of the NVIDIA driver, or CUDA or CuDNN.<br><br>On the faulty machine I had installed CuDNN using the “linux archive” instead of a simple “deb” file. So, I installed CuDNN that way, but nothing changed.<br><br>The NVIDIA driver on the faulty machine was 390.77 but on the good machine was 396.54. So, I set to install NVIDIA 396 on Ubuntu 18.04.<br><br>First you need to delete your current driver:<br><br><code class="language-bash">sudo apt purge nvidia-*</code><br><br>Then add the graphics card driver repository:<br><br><code class="language-bash">sudo add-apt-repository ppa:graphics-drivers/ppa</code><br><br>Then you need to install the driver:<br><br><code class="language-bash">sudo apt install nvidia-driver-396 nvidia-utils-396 nvidia-kernel-common-396</code><br><br>Reboot.<br><br>That’s it. After the reboot everything should be working now.
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>How to set the PYTHONPATH for your VirualEnv in Windows</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/how-to-set-the-pythonpath-for-your-virualenv-in-windows.html"/>
+        <id>https://hojjatabdollahi.github.io/how-to-set-the-pythonpath-for-your-virualenv-in-windows.html</id>
+            <category term="windows"/>
+            <category term="python"/>
+
+        <updated>2020-03-23T17:01:06-06:00</updated>
+            <summary>
+                <![CDATA[
+                    VSCode keeps telling me “ImportError: No module named xxx”. Why? because I’m trying to run a code from a sub-folder and the module is in the parent directory. How to fix this? Well easy, add the parent directory to your PYTHONPATH. But how? There are&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                VSCode keeps telling me “ImportError: No module named xxx”. Why? because I’m trying to run a code from a sub-folder and the module is in the parent directory. How to fix this? Well easy, add the parent directory to your PYTHONPATH. But how?<br><br>There are some options out there, for example adding the absolute address to a file named .env and placing it in your root folder.<br><br>Or adding the pythonpath to your launch.json file.<br><br>But this is how I did it:<br><br>Open the activate.ps1 file in your venv/scrips/activate.ps1 and add the following to the “deactivate” function:<br><br><code>if (Test-Path env:_OLD_VIRTUAL_PATH) {</code><br><code> copy-item env:_OLD_VIRTUAL_PATH env:PATH</code><br><code> remove-item env:_OLD_VIRTUAL_PATH</code><br><code> }</code><br><br>And add this to the end of the file:<br><br><code>if (Test-Path env:PYTHONPATH) {</code><br><code> copy-item env:PYTHONPATH env:_OLD_PYTHON_PATH</code><br><code>}</code><br><code>$env:PYTHONPATH = "$(Resolve-Path "$env:VIRTUAL_ENV\..");$env:PYTHONPATH"</code>
             ]]>
         </content>
     </entry>
