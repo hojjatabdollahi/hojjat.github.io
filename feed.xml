@@ -3,14 +3,14 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-03-23T20:19:56-06:00</updated>
+    <updated>2020-03-24T10:56:59-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
     <id>https://hojjatabdollahi.github.io</id>
 
     <entry>
-        <title>Cisco AnyConnect VPN in Linux (Ubuntu 19.10)</title>
+        <title>Cisco AnyConnect VPN in Linux (Ubuntu 18.04,19.10)</title>
         <author>
             <name>Hojjat</name>
         </author>
@@ -19,15 +19,17 @@
             <category term="linux"/>
             <category term="cisco"/>
 
-        <updated>2020-03-23T17:01:40-06:00</updated>
+        <updated>2020-03-24T10:56:53-06:00</updated>
             <summary>
                 <![CDATA[
-                    I’m writing this here for my future use. Install these: sudo apt-get install openconnect lib32ncurses6 lib32tinfo6 lib32z1 libc6-i386 libpkcs11-helper1 openvpn vpnc-scripts net-tools Download and unzip this. Go to the vpn folder and run ./vpn_install.sh then install the vpn. Finally run the vpn using: /opt/cisco/anyconnect/bin/vpnui For&hellip;
+                    I’m writing this here for my future use. Install these: Ubuntu 18.04: sudo apt-get install openconnect lib32ncurses5 lib32tinfo5 lib32z1 libc6-i386 libpkcs11-helper1 openvpn vpnc-scripts net-tools Ubuntu 19.10: sudo apt-get install openconnect lib32ncurses6 lib32tinfo6 lib32z1 libc6-i386 libpkcs11-helper1 openvpn vpnc-scripts net-tools Download and unzip this. Go to the&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <em>I’m writing this here for my future use.</em><br><br>Install these:<br><br><code class="language-bash">sudo apt-get install openconnect lib32ncurses6 lib32tinfo6 lib32z1 libc6-i386 libpkcs11-helper1 openvpn vpnc-scripts net-tools</code><br><br>Download and unzip <a href="https://uci.service-now.com/sys_attachment.do?sys_id=3e869ef2db082b0054e7f236bf961900" target="_blank" rel="noopener noreferrer">this</a>.<br><br>Go to the vpn folder and run ./vpn_install.sh then install the vpn.<br><br>Finally run the vpn using:<br><br><code class="language-bash">/opt/cisco/anyconnect/bin/vpnui</code><br><br>For the university of Denver I use this URL to connect to:<br><br><code>https://vpn-external.du.edu:443</code><br><br>It then will ask for username and password, I use my ID number and password here.
+                <p><em>I’m writing this here for my future use.</em><br><br>Install these:<br>Ubuntu 18.04:</p>
+<p><code class="language-bash">sudo apt-get install openconnect lib32ncurses5 lib32tinfo5 lib32z1 libc6-i386 libpkcs11-helper1 openvpn vpnc-scripts net-tools</code></p>
+<p>Ubuntu 19.10:<br><code class="language-bash">sudo apt-get install openconnect lib32ncurses6 lib32tinfo6 lib32z1 libc6-i386 libpkcs11-helper1 openvpn vpnc-scripts net-tools</code><br><br>Download and unzip <a href="https://uci.service-now.com/sys_attachment.do?sys_id=3e869ef2db082b0054e7f236bf961900" target="_blank" rel="noopener noreferrer">this</a>.<br><br>Go to the vpn folder and run ./vpn_install.sh then install the vpn.<br><br>Finally run the vpn using:<br><br><code class="language-bash">/opt/cisco/anyconnect/bin/vpnui</code><br><br>For the university of Denver I use this URL to connect to:<br><br><code>https://vpn-external.du.edu:443</code><br><br>It then will ask for username and password, I use my ID number and password here.</p>
             ]]>
         </content>
     </entry>
