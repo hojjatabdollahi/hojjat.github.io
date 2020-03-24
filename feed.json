@@ -11,20 +11,6 @@
     },
     "items": [
         {
-            "id": "https://hojjatabdollahi.github.io/what-does-zip-command-do-in-python.html",
-            "url": "https://hojjatabdollahi.github.io/what-does-zip-command-do-in-python.html",
-            "title": "What does zip command do in Python?",
-            "summary": "THis is a code: A = [1, 2, 3, 4] B = [5, 6, 7, 8] C = zip (A, B) # output: (1,5), (2,6), (3,7), (4,8)test",
-            "content_html": "<p>THis is a code:</p>\n<p> </p>\n<pre><code class=\"language-python\">A = [1, 2, 3, 4]</code><br><code class=\"language-python\">B = [5, 6, 7, 8]</code><br><code class=\"language-python\">C = zip (A, B)</code><br><code class=\"language-python\"># output: (1,5), (2,6), (3,7), (4,8)</code></pre>\ntest",
-            "author": {
-                "name": "Hojjat"
-            },
-            "tags": [
-            ],
-            "date_published": "2020-03-23T16:25:56-06:00",
-            "date_modified": "2020-03-23T16:40:11-06:00"
-        },
-        {
             "id": "https://hojjatabdollahi.github.io/cisco-anyconnect-vpn-in-linux-ubuntu-1910.html",
             "url": "https://hojjatabdollahi.github.io/cisco-anyconnect-vpn-in-linux-ubuntu-1910.html",
             "title": "Cisco AnyConnect VPN in Linux (Ubuntu 19.10)",

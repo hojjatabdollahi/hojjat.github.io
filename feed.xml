@@ -3,35 +3,12 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-03-23T20:16:40-06:00</updated>
+    <updated>2020-03-23T20:17:36-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
     <id>https://hojjatabdollahi.github.io</id>
 
-    <entry>
-        <title>What does zip command do in Python?</title>
-        <author>
-            <name>Hojjat</name>
-        </author>
-        <link href="https://hojjatabdollahi.github.io/what-does-zip-command-do-in-python.html"/>
-        <id>https://hojjatabdollahi.github.io/what-does-zip-command-do-in-python.html</id>
-
-        <updated>2020-03-23T16:40:11-06:00</updated>
-            <summary>
-                <![CDATA[
-                    THis is a code: A = [1, 2, 3, 4] B = [5, 6, 7, 8] C = zip (A, B) # output: (1,5), (2,6), (3,7), (4,8)test
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>THis is a code:</p>
-<p> </p>
-<pre><code class="language-python">A = [1, 2, 3, 4]</code><br><code class="language-python">B = [5, 6, 7, 8]</code><br><code class="language-python">C = zip (A, B)</code><br><code class="language-python"># output: (1,5), (2,6), (3,7), (4,8)</code></pre>
-test
-            ]]>
-        </content>
-    </entry>
     <entry>
         <title>Cisco AnyConnect VPN in Linux (Ubuntu 19.10)</title>
         <author>
