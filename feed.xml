@@ -3,12 +3,48 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-03-24T10:57:33-06:00</updated>
+    <updated>2020-04-07T11:33:35-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
     <id>https://hojjatabdollahi.github.io</id>
 
+    <entry>
+        <title>How to switch between different versions of g++</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/how-to-switch-between-different-versions-of-g.html"/>
+        <id>https://hojjatabdollahi.github.io/how-to-switch-between-different-versions-of-g.html</id>
+            <category term="linux"/>
+
+        <updated>2020-04-07T11:33:19-06:00</updated>
+            <summary>
+                <![CDATA[
+                    I needed to compile an old code and needed to use older versions of g++. Here is how I did it: sudo apt install g++-4.8 g++-5 g++-6 g++-7 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 1 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 1 sudo update-alternatives --install&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I needed to compile an old code and needed to use older versions of g++. Here is how I did it:</p>
+<ul>
+<li>First, install the older version</li>
+</ul>
+<p><code class="language-bash">sudo apt install g++-4.8 g++-5 g++-6 g++-7</code></p>
+<ul>
+<li>Then, tell the system that there is a new alternative</li>
+</ul>
+<p><code class="language-bash">sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 1</code></p>
+<p><code>sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 1</code></p>
+<p><code class="language-bash">sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 1</code></p>
+<ul>
+<li>Finally you can choose which g++ you want to use:</li>
+</ul>
+<p><code class="language-bash">sudo upate-alternatives --config g++</code></p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Cisco AnyConnect VPN in Linux (Ubuntu 18.04,19.10)</title>
         <author>

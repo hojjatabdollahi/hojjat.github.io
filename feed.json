@@ -11,6 +11,21 @@
     },
     "items": [
         {
+            "id": "https://hojjatabdollahi.github.io/how-to-switch-between-different-versions-of-g.html",
+            "url": "https://hojjatabdollahi.github.io/how-to-switch-between-different-versions-of-g.html",
+            "title": "How to switch between different versions of g++",
+            "summary": "I needed to compile an old code and needed to use older versions of g++. Here is how I did it: sudo apt install g++-4.8 g++-5 g++-6 g++-7 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 1 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 1 sudo update-alternatives --install&hellip;",
+            "content_html": "<p>I needed to compile an old code and needed to use older versions of g++. Here is how I did it:</p>\n<ul>\n<li>First, install the older version</li>\n</ul>\n<p><code class=\"language-bash\">sudo apt install g++-4.8 g++-5 g++-6 g++-7</code></p>\n<ul>\n<li>Then, tell the system that there is a new alternative</li>\n</ul>\n<p><code class=\"language-bash\">sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 1</code></p>\n<p><code>sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 1</code></p>\n<p><code class=\"language-bash\">sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 1</code></p>\n<ul>\n<li>Finally you can choose which g++ you want to use:</li>\n</ul>\n<p><code class=\"language-bash\">sudo upate-alternatives --config g++</code></p>\n<p> </p>",
+            "author": {
+                "name": "Hojjat"
+            },
+            "tags": [
+                   "linux"
+            ],
+            "date_published": "2020-04-07T11:32:51-06:00",
+            "date_modified": "2020-04-07T11:33:19-06:00"
+        },
+        {
             "id": "https://hojjatabdollahi.github.io/cisco-anyconnect-vpn-in-linux-ubuntu-1910.html",
             "url": "https://hojjatabdollahi.github.io/cisco-anyconnect-vpn-in-linux-ubuntu-1910.html",
             "title": "Cisco AnyConnect VPN in Linux (Ubuntu 18.04,19.10)",
