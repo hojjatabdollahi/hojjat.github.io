@@ -11,6 +11,22 @@
     },
     "items": [
         {
+            "id": "https://hojjatabdollahi.github.io/how-to-merge-two-pdfs-in-ubuntu-1804.html",
+            "url": "https://hojjatabdollahi.github.io/how-to-merge-two-pdfs-in-ubuntu-1804.html",
+            "title": "How to merge two PDFs in Ubuntu 18.04",
+            "summary": "Install pdftk: sudo add-apt-repository ppa:malteworld/ppa sudo apt install pdftk Then simply call it: pdftk file1.pdf file2.pdf cat output merged_output.pdf ",
+            "content_html": "<p>Install <code>pdftk</code>:</p>\n<p><code class=\"language-bash\">sudo add-apt-repository ppa:malteworld/ppa</code></p>\n<p><code class=\"language-bash\">sudo apt install pdftk</code></p>\n<p>Then simply call it:</p>\n<p><code class=\"language-bash\">pdftk file1.pdf file2.pdf cat output merged_output.pdf</code></p>\n<p> </p>\n<p> </p>",
+            "author": {
+                "name": "Hojjat"
+            },
+            "tags": [
+                   "sh",
+                   "linux"
+            ],
+            "date_published": "2020-04-20T16:47:14-06:00",
+            "date_modified": "2020-04-20T16:47:14-06:00"
+        },
+        {
             "id": "https://hojjatabdollahi.github.io/how-to-switch-between-different-versions-of-g.html",
             "url": "https://hojjatabdollahi.github.io/how-to-switch-between-different-versions-of-g.html",
             "title": "How to switch between different versions of g++",
@@ -154,21 +170,6 @@
             ],
             "date_published": "2018-10-05T17:15:00-06:00",
             "date_modified": "2020-03-23T17:15:41-06:00"
-        },
-        {
-            "id": "https://hojjatabdollahi.github.io/fix-msb0001-internal-msbuild-error-throwing-from-logger-shutdown.html",
-            "url": "https://hojjatabdollahi.github.io/fix-msb0001-internal-msbuild-error-throwing-from-logger-shutdown.html",
-            "title": "Fix “MSB0001: Internal MSBuild Error: Throwing from logger shutdown”",
-            "summary": "After updating Visual Studio 2017 (15.5) to 2017 (15.8) I was not able to open any of my projects. It would just say “Unable to open one or more project, see the output window” and there was nothing in the output window. I opened one&hellip;",
-            "content_html": "<p id=\"6662\" class=\"fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp\" >After updating Visual Studio 2017 (15.5) to 2017 (15.8) I was not able to open any of my projects. It would just say “Unable to open one or more project, see the output window” and there was nothing in the output window.</p>\n<p id=\"2801\" class=\"fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp\" >I opened one project separately and it said:</p>\n<p id=\"bbcf\" class=\"fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp\" ><code>MSB0001: Internal MSBuild Error: Throwing from logger shutdown</code></p>\n<p id=\"a3b4\" class=\"fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp\" >To fix it you need to open “Developer Command Prompt For VS 2017” as Administrator and run the following command:</p>\n<p id=\"c360\" class=\"fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp\" ><code>gacutil /u Microsoft.Build.Framework</code></p>",
-            "author": {
-                "name": "Hojjat"
-            },
-            "tags": [
-                   "visual studio"
-            ],
-            "date_published": "2018-09-19T17:16:00-06:00",
-            "date_modified": "2020-03-23T17:17:00-06:00"
         }
     ]
 }

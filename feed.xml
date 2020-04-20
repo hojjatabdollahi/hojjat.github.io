@@ -3,12 +3,40 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-04-07T11:37:38-06:00</updated>
+    <updated>2020-04-20T17:05:48-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
     <id>https://hojjatabdollahi.github.io</id>
 
+    <entry>
+        <title>How to merge two PDFs in Ubuntu 18.04</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/how-to-merge-two-pdfs-in-ubuntu-1804.html"/>
+        <id>https://hojjatabdollahi.github.io/how-to-merge-two-pdfs-in-ubuntu-1804.html</id>
+            <category term="sh"/>
+            <category term="linux"/>
+
+        <updated>2020-04-20T16:47:14-06:00</updated>
+            <summary>
+                <![CDATA[
+                    Install pdftk: sudo add-apt-repository ppa:malteworld/ppa sudo apt install pdftk Then simply call it: pdftk file1.pdf file2.pdf cat output merged_output.pdf 
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Install <code>pdftk</code>:</p>
+<p><code class="language-bash">sudo add-apt-repository ppa:malteworld/ppa</code></p>
+<p><code class="language-bash">sudo apt install pdftk</code></p>
+<p>Then simply call it:</p>
+<p><code class="language-bash">pdftk file1.pdf file2.pdf cat output merged_output.pdf</code></p>
+<p> </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>How to switch between different versions of g++</title>
         <author>
@@ -224,31 +252,6 @@
         <content type="html">
             <![CDATA[
                 TL;DR<br><br>So, to sum it up, in my case, it looks like that I needed both Microsoft Build Tools 2015 and 2017. And then I needed to copy and modify vcvarsall.bat into a new folder to make things work.<br><br>Long version:<br><br>So, I needed to install spaCy on Windows 10 64bit. But when I ran the following command:<br><br> <code class="language-bash">pip install spaCy</code><br><br>It says:<br><br> <code>error Unable to find vcvarsall.bat</code><br><br>It is because spaCy has no pre-compiled wheels for windows and it tries to compile it for your system. But if your compiler setup is not correct (I don’t know what it should be), then you get the error above.<br><br>Unfortunately, there is no good binary wheels online, I tried to use the binaries provided <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>.<br><br><br>But again, Spacy would try to compile a newer version of thinc and the same error would happen.<br><br>I searched everywhere and installed so many things that I have no idea exactly which one did the trick. But here is what I think helped:<br><br>Note that I installed spaCy in a virtual environment and I used PowerShell with administrator privileges to do so.<br><br>First we need to find where vcvarsall.bat is!<br>On my system it is here:<br><br> <code>C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build</code><br><br>I think the reason that vcvarsall.bat is there, is because I installed <a href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Microsoft Build Tools 2017</a>. However, I also have Visual Studio 2017 Community on my machine.<br><br>As you can see, vcvarsall.bat is in my 2017 folder but python 3.5 needs a compiler and it is looking for vcvarsall.bat in 2015 folder, here:<br><code>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC</code><br>That folder exists on my machine, I think because I installed <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48159">Microsoft Build Tools 2015</a>. But there is no vcvarsall.bat in that folder. Note that Visual Sudio 14.0 is actually Visual Studio 2015. Also, I don’t have Visual Studio 2015 installed on my machine, just Microsoft Build Tools 2015. (I know, it is confusing)<br><br>So, I copied the vcvarsall.bat from the first address (2017), into this new address (2015). Now, it is complaining that it can not find cl.exe or an there is an error with link.exe or something like that.<br><br>Since vcvarsall.bat has relative paths in it, I opened it and replaced all the<br><br> <code>%~dp0</code><br><br>with<br><br> <code>C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\</code><br><br>After doing so, the installation for spaCy worked.<br><br>Go figure!
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Fix “MSB0001: Internal MSBuild Error: Throwing from logger shutdown”</title>
-        <author>
-            <name>Hojjat</name>
-        </author>
-        <link href="https://hojjatabdollahi.github.io/fix-msb0001-internal-msbuild-error-throwing-from-logger-shutdown.html"/>
-        <id>https://hojjatabdollahi.github.io/fix-msb0001-internal-msbuild-error-throwing-from-logger-shutdown.html</id>
-            <category term="visual studio"/>
-
-        <updated>2020-03-23T17:17:00-06:00</updated>
-            <summary>
-                <![CDATA[
-                    After updating Visual Studio 2017 (15.5) to 2017 (15.8) I was not able to open any of my projects. It would just say “Unable to open one or more project, see the output window” and there was nothing in the output window. I opened one&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p id="6662" class="fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp" >After updating Visual Studio 2017 (15.5) to 2017 (15.8) I was not able to open any of my projects. It would just say “Unable to open one or more project, see the output window” and there was nothing in the output window.</p>
-<p id="2801" class="fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp" >I opened one project separately and it said:</p>
-<p id="bbcf" class="fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp" ><code>MSB0001: Internal MSBuild Error: Throwing from logger shutdown</code></p>
-<p id="a3b4" class="fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp" >To fix it you need to open “Developer Command Prompt For VS 2017” as Administrator and run the following command:</p>
-<p id="c360" class="fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp" ><code>gacutil /u Microsoft.Build.Framework</code></p>
             ]]>
         </content>
     </entry>
