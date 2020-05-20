@@ -3,7 +3,7 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-05-19T19:38:59-06:00</updated>
+    <updated>2020-05-20T09:04:08-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://hojjatabdollahi.github.io/couchdb-on-ubuntu-1804.html"/>
         <id>https://hojjatabdollahi.github.io/couchdb-on-ubuntu-1804.html</id>
 
-        <updated>2020-05-19T19:38:39-06:00</updated>
+        <updated>2020-05-20T09:04:03-06:00</updated>
             <summary>
                 <![CDATA[
                     Install CouchDB using snap: sudo snap install couchdb Set the admin pass: sudo snap set couchdb admin=1 Give it permissions that it needs: sudo snap connect couchdb:mount-observe sudo snap connect couchdb:process-control Start the service: sudo snap start couchdb Go to this address in your browser:&hellip;
@@ -47,7 +47,8 @@
 <p>3- call this file `del`</p>
 <p><code class="language-bash">#!/bin/bash</code></p>
 <p><code class="language-bash">curl -sX DELETE http://admin:1@localhost:5984/$1 | jq</code></p>
-<p> Make these executable and add them to a folder that exists in the  $PATH.</p>
+<p>Make these executable and add them to a folder that exists in the  $PATH.</p>
+<p>The `-s` in the `curl` command is there to not show the download progressbar. Otherwise, the output of these files will have some extra lines in the begninning that makes it ugly.</p>
 <p>Now you can run commands like this:</p>
 <p><code class="language-bash">get _all_dbs</code></p>
 <p> </p>
