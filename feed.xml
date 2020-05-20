@@ -3,12 +3,112 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-04-20T17:21:32-06:00</updated>
+    <updated>2020-05-19T19:38:59-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
     <id>https://hojjatabdollahi.github.io</id>
 
+    <entry>
+        <title>CouchDB on Ubuntu 18.04</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/couchdb-on-ubuntu-1804.html"/>
+        <id>https://hojjatabdollahi.github.io/couchdb-on-ubuntu-1804.html</id>
+
+        <updated>2020-05-19T19:38:39-06:00</updated>
+            <summary>
+                <![CDATA[
+                    Install CouchDB using snap: sudo snap install couchdb Set the admin pass: sudo snap set couchdb admin=1 Give it permissions that it needs: sudo snap connect couchdb:mount-observe sudo snap connect couchdb:process-control Start the service: sudo snap start couchdb Go to this address in your browser:&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Install CouchDB using snap:</p>
+<p><code class="language-bash">sudo snap install couchdb</code></p>
+<p>Set the admin pass:</p>
+<p><code class="language-bash">sudo snap set couchdb admin=1</code></p>
+<p>Give it permissions that it needs:</p>
+<p><code class="language-bash">sudo snap connect couchdb:mount-observe</code></p>
+<p><code class="language-bash">sudo snap connect couchdb:process-control</code></p>
+<p>Start the service:</p>
+<p><code class="language-bash">sudo snap start couchdb</code></p>
+<p>Go to this address in your browser: `<a href="http://localhost:5984/_utils&#96;">http://localhost:5984/_utils</a>`</p>
+<p>Install `jq` for prettifying the output json</p>
+<p><code class="language-bash">sudo apt install jq</code></p>
+<p>Create 3 files. </p>
+<p>1- call this file `get`</p>
+<p><code class="language-bash">#!/bin/bash</code></p>
+<p><code class="language-bash">curl -sX GET http://admin:1@localhost:5984/$1 | jq</code></p>
+<p>2- call this file `put`</p>
+<p><code class="language-bash">#!/bin/bash</code></p>
+<p><code class="language-bash">curl -sX PUT http://admin:1@localhost:5984/$1 | jq</code></p>
+<p>3- call this file `del`</p>
+<p><code class="language-bash">#!/bin/bash</code></p>
+<p><code class="language-bash">curl -sX DELETE http://admin:1@localhost:5984/$1 | jq</code></p>
+<p> Make these executable and add them to a folder that exists in the  $PATH.</p>
+<p>Now you can run commands like this:</p>
+<p><code class="language-bash">get _all_dbs</code></p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Chaning the SWAP file size in Ubuntu 18.045</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/chaning-the-swap-file-size-in-ubuntu-18045.html"/>
+        <id>https://hojjatabdollahi.github.io/chaning-the-swap-file-size-in-ubuntu-18045.html</id>
+            <category term="sh"/>
+            <category term="linux"/>
+
+        <updated>2020-05-13T16:32:08-06:00</updated>
+            <summary>
+                <![CDATA[
+                    If you install linux without a dedicated swap partition you will get a swap file. The swap file is in root: `/swapfile` To see the size you can run `swapon --show` You can turn off swap with `sudo swapoff /swapfile` If you run `free -h`&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                If you install linux without a dedicated swap partition you will get a swap file. The swap file is in root:<br>`/swapfile`<br><br>To see the size you can run<br>`swapon --show`<br><br>You can turn off swap with<br>`sudo swapoff /swapfile`<br><br>If you run `free -h` you will see that you have 0 swap<br><br>Now you can allocate more space to that swapfile<br>`sudo fallocate -l 20G /swapfile`<br><br>Now make that file a swap again<br>`sudo mkswap /swapfile`<br><br>And now turn on swap again<br>`sudo swapon /swapfile`<br>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Docker with a volume with user-level permissions</title>
+        <author>
+            <name>Hojjat</name>
+        </author>
+        <link href="https://hojjatabdollahi.github.io/docker-with-a-volume-with-user-level-pre.html"/>
+        <id>https://hojjatabdollahi.github.io/docker-with-a-volume-with-user-level-pre.html</id>
+            <category term="linux"/>
+            <category term="docker"/>
+
+        <updated>2020-04-27T17:07:35-06:00</updated>
+            <summary>
+                <![CDATA[
+                    If you mount a folder in your docker all the files created in it will be owned by the root. To fix this add the following to the Dockerfile ARG USER_ID ARG GROUP_ID RUN addgroup --gid $GROUP_ID user RUN adduser --disabled-password --gecos '' --uid $USER_ID&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>If you mount a folder in your docker all the files created in it will be owned by the root. To fix this add the following to the Dockerfile</p>
+<p><code class="language-bash">ARG USER_ID</code><br><code class="language-bash">ARG GROUP_ID</code><br><br><code class="language-bash">RUN addgroup --gid $GROUP_ID user</code><br><code class="language-bash">RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user</code><br><code class="language-bash">USER user</code></p>
+<p>and then create the image like so:</p>
+<p><code class="language-bash">docker build -t tensorflow112 --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) -f Dockerfiles/ubuntu-shared-cuda .</code></p>
+<p>create the instance like so:</p>
+<p><code class="language-bash">docker run -it --name tf112 --user "$(id -u):$(id -g)" -v $(pwd):/home tensorflow112</code></p>
+<p>and you can start it later like so:</p>
+<p><code class="language-bash">docker start -i tf112</code></p>
+<p>How to give it a password:</p>
+<p><code class="language-bash">docker exec -it --user root tf112 bash</code><br><code class="language-bash">echo 'user:1' | chpasswd</code></p>
+<p>How to give the user sudo permission:</p>
+<p><code class="language-bash">docker exec -it --user root tf112 bash</code><br><code class="language-bash">usermod -aG sudo user</code></p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>How to merge two PDFs in Ubuntu 18.04</title>
         <author>
@@ -181,77 +281,6 @@
         <content type="html">
             <![CDATA[
                 Curious. I could run a code in TF and it would use the GPU with absolutely no problem. But I had another code with Keras that would not run!<br><br>After hours of pulling my hair out and cursing I figured it out. I have access to another machine and the same Keras code was running on that one with no problems. I figured that it could be the version of the NVIDIA driver, or CUDA or CuDNN.<br><br>On the faulty machine I had installed CuDNN using the “linux archive” instead of a simple “deb” file. So, I installed CuDNN that way, but nothing changed.<br><br>The NVIDIA driver on the faulty machine was 390.77 but on the good machine was 396.54. So, I set to install NVIDIA 396 on Ubuntu 18.04.<br><br>First you need to delete your current driver:<br><br><code class="language-bash">sudo apt purge nvidia-*</code><br><br>Then add the graphics card driver repository:<br><br><code class="language-bash">sudo add-apt-repository ppa:graphics-drivers/ppa</code><br><br>Then you need to install the driver:<br><br><code class="language-bash">sudo apt install nvidia-driver-396 nvidia-utils-396 nvidia-kernel-common-396</code><br><br>Reboot.<br><br>That’s it. After the reboot everything should be working now.
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>How to set the PYTHONPATH for your VirualEnv in Windows</title>
-        <author>
-            <name>Hojjat</name>
-        </author>
-        <link href="https://hojjatabdollahi.github.io/how-to-set-the-pythonpath-for-your-virualenv-in-windows.html"/>
-        <id>https://hojjatabdollahi.github.io/how-to-set-the-pythonpath-for-your-virualenv-in-windows.html</id>
-            <category term="windows"/>
-            <category term="python"/>
-
-        <updated>2020-03-23T17:01:06-06:00</updated>
-            <summary>
-                <![CDATA[
-                    VSCode keeps telling me “ImportError: No module named xxx”. Why? because I’m trying to run a code from a sub-folder and the module is in the parent directory. How to fix this? Well easy, add the parent directory to your PYTHONPATH. But how? There are&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                VSCode keeps telling me “ImportError: No module named xxx”. Why? because I’m trying to run a code from a sub-folder and the module is in the parent directory. How to fix this? Well easy, add the parent directory to your PYTHONPATH. But how?<br><br>There are some options out there, for example adding the absolute address to a file named .env and placing it in your root folder.<br><br>Or adding the pythonpath to your launch.json file.<br><br>But this is how I did it:<br><br>Open the activate.ps1 file in your venv/scrips/activate.ps1 and add the following to the “deactivate” function:<br><br><code>if (Test-Path env:_OLD_VIRTUAL_PATH) {</code><br><code> copy-item env:_OLD_VIRTUAL_PATH env:PATH</code><br><code> remove-item env:_OLD_VIRTUAL_PATH</code><br><code> }</code><br><br>And add this to the end of the file:<br><br><code>if (Test-Path env:PYTHONPATH) {</code><br><code> copy-item env:PYTHONPATH env:_OLD_PYTHON_PATH</code><br><code>}</code><br><code>$env:PYTHONPATH = "$(Resolve-Path "$env:VIRTUAL_ENV\..");$env:PYTHONPATH"</code>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>How to use the same key for Git Bash and Sourcetree.</title>
-        <author>
-            <name>Hojjat</name>
-        </author>
-        <link href="https://hojjatabdollahi.github.io/how-to-use-the-same-key-for-git-bash-and-sourcetree.html"/>
-        <id>https://hojjatabdollahi.github.io/how-to-use-the-same-key-for-git-bash-and-sourcetree.html</id>
-            <category term="windows"/>
-            <category term="git"/>
-
-        <updated>2020-03-23T17:11:25-06:00</updated>
-            <summary>
-                <![CDATA[
-                    To create the SSH key you can use PuTTYgen. Using the following command in Git Bash create id_rsa.pub ssh-keygen -i -f public &gt; id_rsa.pub Copy the content of public and import it into Bitbucket. If you don’t know how read the “Add the public key&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>To create the SSH key you can use PuTTYgen.</p>
-<p><img class="post__image" src="https://hojjatabdollahi.github.io/media/posts/8/1-KtLdO5GrNsCOdTDZEG8COA.png" alt="" width="362" height="131"></p>
-<figure class="post__image">It will create <em>private.ppk</em> and <em>public</em>.<br><br>Then using the same window export to openssh and create <em>id_rsa</em></figure>
-<p><img class="post__image" src="https://hojjatabdollahi.github.io/media/posts/8/1-b3DsFrgWL6dtDjkBobGSCA.png" alt="" width="572" height="489"><br><br>Using the following command in Git Bash create id_rsa.pub<br><br> <code class="language-bash">ssh-keygen -i -f public &gt; id_rsa.pub</code><br><br>Copy the content of public and import it into Bitbucket. If you don’t know how read the “Add the public key to your Bitbucket settings” section in <a href="https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html">here</a>.<br><br>Add the code in <a href="https://help.github.com/articles/working-with-ssh-key-passphrases/">here </a>to your <code>~/.bashrc</code> so it runs the agent every time you open <em>Git Bash</em>.<br><br>Now, you can push to your <em>Bitbucket</em> repository using <em>Git Bash</em> or <em>Sourcetree</em> without password.</p>
-<figure class="post__image"></figure>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>How I solved “error Unable to find vcvarsall.bat”</title>
-        <author>
-            <name>Hojjat</name>
-        </author>
-        <link href="https://hojjatabdollahi.github.io/how-i-solved-error-unable-to-find-vcvarsallbat.html"/>
-        <id>https://hojjatabdollahi.github.io/how-i-solved-error-unable-to-find-vcvarsallbat.html</id>
-            <category term="visual studio"/>
-            <category term="spacy"/>
-            <category term="python"/>
-
-        <updated>2020-03-23T17:15:41-06:00</updated>
-            <summary>
-                <![CDATA[
-                    TL;DR So, to sum it up, in my case, it looks like that I needed both Microsoft Build Tools 2015 and 2017. And then I needed to copy and modify vcvarsall.bat into a new folder to make things work. Long version: So, I needed to&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                TL;DR<br><br>So, to sum it up, in my case, it looks like that I needed both Microsoft Build Tools 2015 and 2017. And then I needed to copy and modify vcvarsall.bat into a new folder to make things work.<br><br>Long version:<br><br>So, I needed to install spaCy on Windows 10 64bit. But when I ran the following command:<br><br> <code class="language-bash">pip install spaCy</code><br><br>It says:<br><br> <code>error Unable to find vcvarsall.bat</code><br><br>It is because spaCy has no pre-compiled wheels for windows and it tries to compile it for your system. But if your compiler setup is not correct (I don’t know what it should be), then you get the error above.<br><br>Unfortunately, there is no good binary wheels online, I tried to use the binaries provided <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>.<br><br><br>But again, Spacy would try to compile a newer version of thinc and the same error would happen.<br><br>I searched everywhere and installed so many things that I have no idea exactly which one did the trick. But here is what I think helped:<br><br>Note that I installed spaCy in a virtual environment and I used PowerShell with administrator privileges to do so.<br><br>First we need to find where vcvarsall.bat is!<br>On my system it is here:<br><br> <code>C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build</code><br><br>I think the reason that vcvarsall.bat is there, is because I installed <a href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Microsoft Build Tools 2017</a>. However, I also have Visual Studio 2017 Community on my machine.<br><br>As you can see, vcvarsall.bat is in my 2017 folder but python 3.5 needs a compiler and it is looking for vcvarsall.bat in 2015 folder, here:<br><code>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC</code><br>That folder exists on my machine, I think because I installed <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48159">Microsoft Build Tools 2015</a>. But there is no vcvarsall.bat in that folder. Note that Visual Sudio 14.0 is actually Visual Studio 2015. Also, I don’t have Visual Studio 2015 installed on my machine, just Microsoft Build Tools 2015. (I know, it is confusing)<br><br>So, I copied the vcvarsall.bat from the first address (2017), into this new address (2015). Now, it is complaining that it can not find cl.exe or an there is an error with link.exe or something like that.<br><br>Since vcvarsall.bat has relative paths in it, I opened it and replaced all the<br><br> <code>%~dp0</code><br><br>with<br><br> <code>C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\</code><br><br>After doing so, the installation for spaCy worked.<br><br>Go figure!
             ]]>
         </content>
     </entry>
