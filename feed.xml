@@ -3,7 +3,7 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-05-20T09:39:30-06:00</updated>
+    <updated>2020-05-20T09:41:55-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
@@ -16,8 +16,12 @@
         </author>
         <link href="https://hojjatabdollahi.github.io/couchdb-on-ubuntu-1804.html"/>
         <id>https://hojjatabdollahi.github.io/couchdb-on-ubuntu-1804.html</id>
+            <category term="sh"/>
+            <category term="linux"/>
+            <category term="curl"/>
+            <category term="couchdb"/>
 
-        <updated>2020-05-20T09:19:05-06:00</updated>
+        <updated>2020-05-20T09:41:51-06:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://hojjatabdollahi.github.io/media/posts/16/CouchDB.svg" alt="" />
