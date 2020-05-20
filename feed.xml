@@ -3,7 +3,7 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-05-20T09:17:01-06:00</updated>
+    <updated>2020-05-20T09:19:12-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
@@ -17,14 +17,16 @@
         <link href="https://hojjatabdollahi.github.io/couchdb-on-ubuntu-1804.html"/>
         <id>https://hojjatabdollahi.github.io/couchdb-on-ubuntu-1804.html</id>
 
-        <updated>2020-05-20T09:04:03-06:00</updated>
+        <updated>2020-05-20T09:19:05-06:00</updated>
             <summary>
                 <![CDATA[
+                        <img src="https://hojjatabdollahi.github.io/media/posts/16/CouchDB.svg" alt="" />
                     Install CouchDB using snap: sudo snap install couchdb Set the admin pass: sudo snap set couchdb admin=1 Give it permissions that it needs: sudo snap connect couchdb:mount-observe sudo snap connect couchdb:process-control Start the service: sudo snap start couchdb Go to this address in your browser:&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <img src="https://hojjatabdollahi.github.io/media/posts/16/CouchDB.svg" alt="" />
                 <p>Install CouchDB using snap:</p>
 <p><code class="language-bash">sudo snap install couchdb</code></p>
 <p>Set the admin pass:</p>

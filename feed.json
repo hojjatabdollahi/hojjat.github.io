@@ -16,13 +16,14 @@
             "title": "CouchDB on Ubuntu 18.04",
             "summary": "Install CouchDB using snap: sudo snap install couchdb Set the admin pass: sudo snap set couchdb admin=1 Give it permissions that it needs: sudo snap connect couchdb:mount-observe sudo snap connect couchdb:process-control Start the service: sudo snap start couchdb Go to this address in your browser:&hellip;",
             "content_html": "<p>Install CouchDB using snap:</p>\n<p><code class=\"language-bash\">sudo snap install couchdb</code></p>\n<p>Set the admin pass:</p>\n<p><code class=\"language-bash\">sudo snap set couchdb admin=1</code></p>\n<p>Give it permissions that it needs:</p>\n<p><code class=\"language-bash\">sudo snap connect couchdb:mount-observe</code></p>\n<p><code class=\"language-bash\">sudo snap connect couchdb:process-control</code></p>\n<p>Start the service:</p>\n<p><code class=\"language-bash\">sudo snap start couchdb</code></p>\n<p>Go to this address in your browser: `<a href=\"http://localhost:5984/_utils&#96;\">http://localhost:5984/_utils</a>`</p>\n<p>Install `jq` for prettifying the output json</p>\n<p><code class=\"language-bash\">sudo apt install jq</code></p>\n<p>Create 3 files. </p>\n<p>1- call this file `get`</p>\n<p><code class=\"language-bash\">#!/bin/bash</code></p>\n<p><code class=\"language-bash\">curl -sX GET http://admin:1@localhost:5984/$1 | jq</code></p>\n<p>2- call this file `put`</p>\n<p><code class=\"language-bash\">#!/bin/bash</code></p>\n<p><code class=\"language-bash\">curl -sX PUT http://admin:1@localhost:5984/$1 | jq</code></p>\n<p>3- call this file `del`</p>\n<p><code class=\"language-bash\">#!/bin/bash</code></p>\n<p><code class=\"language-bash\">curl -sX DELETE http://admin:1@localhost:5984/$1 | jq</code></p>\n<p>Make these executable and add them to a folder that exists in the  $PATH.</p>\n<p>The `-s` in the `curl` command is there to not show the download progressbar. Otherwise, the output of these files will have some extra lines in the begninning that makes it ugly.</p>\n<p>Now you can run commands like this:</p>\n<p><code class=\"language-bash\">get _all_dbs</code></p>\n<p> </p>",
+            "image": "https://hojjatabdollahi.github.io/media/posts/16/CouchDB.svg",
             "author": {
                 "name": "Hojjat"
             },
             "tags": [
             ],
             "date_published": "2020-05-19T19:35:13-06:00",
-            "date_modified": "2020-05-20T09:04:03-06:00"
+            "date_modified": "2020-05-20T09:19:05-06:00"
         },
         {
             "id": "https://hojjatabdollahi.github.io/chaning-the-swap-file-size-in-ubuntu-18045.html",
