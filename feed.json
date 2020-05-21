@@ -11,6 +11,38 @@
     },
     "items": [
         {
+            "id": "https://hojjatabdollahi.github.io/the-terminal-prints-m-instead-of-a-new-line.html",
+            "url": "https://hojjatabdollahi.github.io/the-terminal-prints-m-instead-of-a-new-line.html",
+            "title": "The terminal prints ^M instead of a new line!",
+            "summary": "It is probably because some program didn't exit properly. Thankfully, there is a program called stty that can fix this. Here is how to reset all modes to reasonable values for the current terminal: stty sane You can see all settings for the curent terminal&hellip;",
+            "content_html": "<p>It is probably because some program didn't exit properly. </p>\n<p>Thankfully, there is a program called <code>stty</code> that can fix this. </p>\n<p>Here is how to reset all modes to reasonable values for the current terminal:</p>\n<p><code class=\"language-bash\">stty sane</code></p>\n<p>You can see all settings for the curent terminal like so:</p>\n<p><code class=\"language-bash\">stty -a</code></p>",
+            "author": {
+                "name": "Hojjat"
+            },
+            "tags": [
+                   "sh",
+                   "linux"
+            ],
+            "date_published": "2020-05-21T12:27:28-06:00",
+            "date_modified": "2020-05-21T12:27:43-06:00"
+        },
+        {
+            "id": "https://hojjatabdollahi.github.io/fix-scrollilng-speed-on-ubuntu-1804.html",
+            "url": "https://hojjatabdollahi.github.io/fix-scrollilng-speed-on-ubuntu-1804.html",
+            "title": "Fix Scrollilng Speed on Ubuntu 18.04",
+            "summary": "Install `imwheel`: sudo apt install imwheel Create a file with this content: #!/bin/bash # Version 0.1 Tuesday, 07 May 2013 # Comments and complaints http://www.nicknorton.net # GUI for mouse wheel speed using imwheel in Gnome # imwheel needs to be installed for this script to&hellip;",
+            "content_html": "<p>Install `imwheel`:</p>\n<p>sudo apt install imwheel</p>\n<p>Create a file with this content:</p>\n<p><code class=\"language-bash\">#!/bin/bash</code><br><code class=\"language-bash\"># Version 0.1 Tuesday, 07 May 2013</code><br><code class=\"language-bash\"># Comments and complaints http://www.nicknorton.net</code><br><code class=\"language-bash\"># GUI for mouse wheel speed using imwheel in Gnome</code><br><code class=\"language-bash\"># imwheel needs to be installed for this script to work</code><br><code class=\"language-bash\"># sudo apt-get install imwheel</code><br><code class=\"language-bash\"># Pretty much hard wired to only use a mouse with</code><br><code class=\"language-bash\"># left, right and wheel in the middle.</code><br><code class=\"language-bash\"># If you have a mouse with complications or special needs,</code><br><code class=\"language-bash\"># use the command xev to find what your wheel does.</code><br><code class=\"language-bash\">#</code><br><code class=\"language-bash\">### see if imwheel config exists, if not create it ###</code><br><code class=\"language-bash\">if [ ! -f ~/.imwheelrc ]</code><br><code class=\"language-bash\">then</code><br><br><code class=\"language-bash\">cat &gt;~/.imwheelrc&lt;&lt;EOF</code><br><code class=\"language-bash\">\".*\"</code><br><code class=\"language-bash\">None, Up, Button4, 1</code><br><code class=\"language-bash\">None, Down, Button5, 1</code><br><code class=\"language-bash\">Control_L, Up, Control_L|Button4</code><br><code class=\"language-bash\">Control_L, Down, Control_L|Button5</code><br><code class=\"language-bash\">Shift_L, Up, Shift_L|Button4</code><br><code class=\"language-bash\">Shift_L, Down, Shift_L|Button5</code><br><code class=\"language-bash\">EOF</code><br><br><code class=\"language-bash\">fi</code><br><code class=\"language-bash\">##########################################################</code><br><br><code class=\"language-bash\">CURRENT_VALUE=$(awk -F 'Button4,' '{print $2}' ~/.imwheelrc)</code><br><br><code class=\"language-bash\">NEW_VALUE=$(zenity --scale --window-icon=info --ok-label=Apply --title=\"Wheelies\" --text \"Mouse wheel speed:\" --min-value=1 --max-value=100 --value=\"$CURRENT_VALUE\" --step 1)</code><br><br><code class=\"language-bash\">if [ \"$NEW_VALUE\" == \"\" ];</code><br><code class=\"language-bash\">then exit 0</code><br><code class=\"language-bash\">fi</code><br><br><code class=\"language-bash\">sed -i \"s/\\($TARGET_KEY *Button4, *\\).*/\\1$NEW_VALUE/\" ~/.imwheelrc # find the string Button4, and write new value.</code><br><code class=\"language-bash\">sed -i \"s/\\($TARGET_KEY *Button5, *\\).*/\\1$NEW_VALUE/\" ~/.imwheelrc # find the string Button5, and write new value.</code><br><br><code class=\"language-bash\">cat ~/.imwheelrc</code><br><code class=\"language-bash\">imwheel -kill</code></p>\n<p>Run it and set the scroll speed from 1 to 2. I think this would do. I have a feeling that I should add `imwheel` to the startup to fix the speed after the boot. </p>\n<p> </p>",
+            "author": {
+                "name": "Hojjat"
+            },
+            "tags": [
+                   "sh",
+                   "linux"
+            ],
+            "date_published": "2020-05-20T11:23:22-06:00",
+            "date_modified": "2020-05-20T11:28:02-06:00"
+        },
+        {
             "id": "https://hojjatabdollahi.github.io/couchdb-on-ubuntu-1804.html",
             "url": "https://hojjatabdollahi.github.io/couchdb-on-ubuntu-1804.html",
             "title": "CouchDB on Ubuntu 18.04",
@@ -139,39 +171,6 @@
             ],
             "date_published": "2019-02-11T16:54:00-07:00",
             "date_modified": "2020-03-23T17:02:20-06:00"
-        },
-        {
-            "id": "https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html",
-            "url": "https://hojjatabdollahi.github.io/could-not-find-valid-device-for-node-while-eagerly-executing.html",
-            "title": "“Could not find valid device for node.” while eagerly executing.",
-            "summary": "This cryptic error happens when the input to a function has the wrong type! Here is an example: import tensorflow as tf tf.enable_eager_execution() tf.sqrt(4) This will return a long error that basically says: InternalError: Could not find valid device for node. Node: {{node Sqrt}} =&hellip;",
-            "content_html": "This cryptic error happens when the input to a function has the wrong type!<br><br>Here is an example:<br><br><code class=\"language-python\">import tensorflow as tf</code><br><code class=\"language-python\">tf.enable_eager_execution()</code><br><code class=\"language-python\">tf.sqrt(4)</code><br><br>This will return a long error that basically says:<br><br><code>InternalError: Could not find valid device for node. </code><br><code>Node: {{node Sqrt}} = Sqrt[T=DT_INT32](dummy_input) </code><br><code>All kernels registered for op Sqrt : </code><br><code> device='XLA_CPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='XLA_CPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_HALF] </code><br><code> device='XLA_GPU_JIT'; T in [DT_FLOAT, DT_DOUBLE, DT_COMPLEX64, DT_BFLOAT16, DT_HALF] </code><br><code> device='GPU'; T in [DT_DOUBLE] </code><br><code> device='GPU'; T in [DT_HALF] </code><br><code> device='GPU'; T in [DT_FLOAT] </code><br><code> device='CPU'; T in [DT_COMPLEX128] </code><br><code> device='CPU'; T in [DT_COMPLEX64] </code><br><code> device='CPU'; T in [DT_BFLOAT16] </code><br><code> device='CPU'; T in [DT_DOUBLE] </code><br><code> device='CPU'; T in [DT_HALF] </code><br><code> device='CPU'; T in [DT_FLOAT] </code><br><code> [Op:Sqrt] name: Sqrt/</code><br><br>If you pay close attention, it is saying the the input to the function sqrt should be one of <code>double, half, float, complex,...</code> but our input is <code>dt_int32</code> that’s the problem. This works:<br><br><code class=\"language-python\">import tensorflow as tf</code><br><code class=\"language-python\">tf.enable_eager_execution()</code><br><code class=\"language-python\">tf.sqrt(4.) #notice that now the input is a float number</code>",
-            "author": {
-                "name": "Hojjat"
-            },
-            "tags": [
-                   "tensorflow"
-            ],
-            "date_published": "2019-01-29T16:56:00-07:00",
-            "date_modified": "2020-03-23T17:02:34-06:00"
-        },
-        {
-            "id": "https://hojjatabdollahi.github.io/cudnn_status_not_initialized-when-trying-to-run-keras-but-not-tensorflow.html",
-            "url": "https://hojjatabdollahi.github.io/cudnn_status_not_initialized-when-trying-to-run-keras-but-not-tensorflow.html",
-            "title": "CUDNN_STATUS_NOT_INITIALIZED when trying to run Keras, but not TensorFlow!",
-            "summary": "Curious. I could run a code in TF and it would use the GPU with absolutely no problem. But I had another code with Keras that would not run! After hours of pulling my hair out and cursing I figured it out. I have access&hellip;",
-            "content_html": "Curious. I could run a code in TF and it would use the GPU with absolutely no problem. But I had another code with Keras that would not run!<br><br>After hours of pulling my hair out and cursing I figured it out. I have access to another machine and the same Keras code was running on that one with no problems. I figured that it could be the version of the NVIDIA driver, or CUDA or CuDNN.<br><br>On the faulty machine I had installed CuDNN using the “linux archive” instead of a simple “deb” file. So, I installed CuDNN that way, but nothing changed.<br><br>The NVIDIA driver on the faulty machine was 390.77 but on the good machine was 396.54. So, I set to install NVIDIA 396 on Ubuntu 18.04.<br><br>First you need to delete your current driver:<br><br><code class=\"language-bash\">sudo apt purge nvidia-*</code><br><br>Then add the graphics card driver repository:<br><br><code class=\"language-bash\">sudo add-apt-repository ppa:graphics-drivers/ppa</code><br><br>Then you need to install the driver:<br><br><code class=\"language-bash\">sudo apt install nvidia-driver-396 nvidia-utils-396 nvidia-kernel-common-396</code><br><br>Reboot.<br><br>That’s it. After the reboot everything should be working now.",
-            "author": {
-                "name": "Hojjat"
-            },
-            "tags": [
-                   "tensorflow",
-                   "nvidia",
-                   "linux",
-                   "keras"
-            ],
-            "date_published": "2019-01-04T16:59:00-07:00",
-            "date_modified": "2020-03-23T17:03:09-06:00"
         }
     ]
 }
