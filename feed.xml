@@ -3,7 +3,7 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2020-05-21T12:27:54-06:00</updated>
+    <updated>2020-07-09T09:11:34-06:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
@@ -116,7 +116,7 @@
         </content>
     </entry>
     <entry>
-        <title>Chaning the SWAP file size in Ubuntu 18.045</title>
+        <title>Changing the SWAP file size in Ubuntu 18.045</title>
         <author>
             <name>Hojjat</name>
         </author>
@@ -125,7 +125,7 @@
             <category term="sh"/>
             <category term="linux"/>
 
-        <updated>2020-05-13T16:32:08-06:00</updated>
+        <updated>2020-07-09T09:11:09-06:00</updated>
             <summary>
                 <![CDATA[
                     If you install linux without a dedicated swap partition you will get a swap file. The swap file is in root: `/swapfile` To see the size you can run `swapon --show` You can turn off swap with `sudo swapoff /swapfile` If you run `free -h`&hellip;
@@ -133,7 +133,7 @@
             </summary>
         <content type="html">
             <![CDATA[
-                If you install linux without a dedicated swap partition you will get a swap file. The swap file is in root:<br>`/swapfile`<br><br>To see the size you can run<br>`swapon --show`<br><br>You can turn off swap with<br>`sudo swapoff /swapfile`<br><br>If you run `free -h` you will see that you have 0 swap<br><br>Now you can allocate more space to that swapfile<br>`sudo fallocate -l 20G /swapfile`<br><br>Now make that file a swap again<br>`sudo mkswap /swapfile`<br><br>And now turn on swap again<br>`sudo swapon /swapfile`<br>
+                If you install linux without a dedicated swap partition you will get a swap file. The swap file is in root:<br>`/swapfile`<br><br>To see the size you can run<br>`swapon --show`<br><br>You can turn off swap with<br>`sudo swapoff /swapfile`<br><br>If you run `free -h` you will see that you have 0 swap<br><br>Now you can allocate more space to that swapfile<br>`sudo fallocate -l 20G /swapfile`<br><br>Now make that file a swap again<br>`sudo mkswap /swapfile`<br><br>And now turn on swap again<br>`sudo swapon /swapfile`
             ]]>
         </content>
     </entry>
