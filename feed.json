@@ -11,6 +11,21 @@
     },
     "items": [
         {
+            "id": "https://hojjatabdollahi.github.io/rust-ref-deref-clone.html",
+            "url": "https://hojjatabdollahi.github.io/rust-ref-deref-clone.html",
+            "title": "Rust: Ref, Deref, Clone",
+            "summary": "To convert `Option&lt;T&gt;` to `Option&lt;&amp;T&gt;` use `as_deref()` To convert `&amp;Option&lt;T&gt;` to `Option&lt;&amp;T&gt;` use `as_deref()` To convert `Option&lt;&amp;T&gt;` to `Option&lt;T&gt;` use `cloned()` I don't know what is the difference between `as_ref()` and `as_deref()` when it comes to converting `&amp;Option&lt;T&gt;` to `Option&lt;&amp;T&gt;`. ",
+            "content_html": "<p>To convert `<code>Option&lt;T&gt;</code>` to `<code>Option&lt;&amp;T&gt;</code>` use `<code>as_deref()</code>`</p>\n<p>To convert `<code>&amp;Option&lt;T&gt;</code>` to `<code>Option&lt;&amp;T&gt;</code>` use `<code>as_deref()</code>`</p>\n<p>To convert `<code>Option&lt;&amp;T&gt;</code>` to `<code>Option&lt;T&gt;</code>` use `<code>cloned()</code>`</p>\n<p>I don't know what is the difference between `<code>as_ref()</code>` and `<code>as_deref()</code>` when it comes to converting `<code>&amp;Option&lt;T&gt;</code>` to `<code>Option&lt;&amp;T&gt;</code>`. </p>\n<p> </p>\n<p> </p>",
+            "author": {
+                "name": "Hojjat"
+            },
+            "tags": [
+                   "rust"
+            ],
+            "date_published": "2020-12-21T21:39:26-07:00",
+            "date_modified": "2020-12-21T21:39:51-07:00"
+        },
+        {
             "id": "https://hojjatabdollahi.github.io/the-terminal-prints-m-instead-of-a-new-line.html",
             "url": "https://hojjatabdollahi.github.io/the-terminal-prints-m-instead-of-a-new-line.html",
             "title": "The terminal prints ^M instead of a new line!",
@@ -65,8 +80,8 @@
             "id": "https://hojjatabdollahi.github.io/chaning-the-swap-file-size-in-ubuntu-18045.html",
             "url": "https://hojjatabdollahi.github.io/chaning-the-swap-file-size-in-ubuntu-18045.html",
             "title": "Changing the SWAP file size in Ubuntu 18.045",
-            "summary": "If you install linux without a dedicated swap partition you will get a swap file. The swap file is in root: `/swapfile` To see the size you can run `swapon --show` You can turn off swap with `sudo swapoff /swapfile` If you run `free -h`&hellip;",
-            "content_html": "If you install linux without a dedicated swap partition you will get a swap file. The swap file is in root:<br>`/swapfile`<br><br>To see the size you can run<br>`swapon --show`<br><br>You can turn off swap with<br>`sudo swapoff /swapfile`<br><br>If you run `free -h` you will see that you have 0 swap<br><br>Now you can allocate more space to that swapfile<br>`sudo fallocate -l 20G /swapfile`<br><br>Now make that file a swap again<br>`sudo mkswap /swapfile`<br><br>And now turn on swap again<br>`sudo swapon /swapfile`",
+            "summary": "If you install linux without a dedicated swap partition you will get a swap file. The swap file is in root: /swapfile To see the size you can run swapon --show You can turn off swap with sudo swapoff /swapfile If you run `free -h`&hellip;",
+            "content_html": "<p>If you install linux without a dedicated swap partition you will get a swap file. The swap file is in root:<br><code class=\"language-bash\">/swapfile</code><br><br>To see the size you can run<br><code class=\"language-bash\">swapon --show</code><br><br>You can turn off swap with<br><code class=\"language-bash\">sudo swapoff /swapfile</code><br><br>If you run <code class=\"language-bash\">`free -h`</code> you will see that you have 0 swap<br><br>Now you can allocate more space to that swapfile<br><code class=\"language-bash\">sudo fallocate -l 20G /swapfile</code><br><br>Now make that file a swap again<br><code class=\"language-bash\">sudo mkswap /swapfile</code><br><br>And now turn on swap again<br><code class=\"language-bash\">sudo swapon /swapfile</code></p>",
             "author": {
                 "name": "Hojjat"
             },
@@ -75,7 +90,7 @@
                    "linux"
             ],
             "date_published": "2020-05-13T16:32:08-06:00",
-            "date_modified": "2020-07-09T09:11:09-06:00"
+            "date_modified": "2020-07-10T09:19:50-06:00"
         },
         {
             "id": "https://hojjatabdollahi.github.io/docker-with-a-volume-with-user-level-pre.html",
@@ -145,7 +160,7 @@
             "url": "https://hojjatabdollahi.github.io/running-docker-compose-in-google-cloud.html",
             "title": "Running docker-compose in Google Cloud",
             "summary": "I have a docker container that works fine on my machine if I run it with docker-compose but it does not work well with running it using docker run , However, when I create a container to put it on Google Cloud, the Google Cloud&hellip;",
-            "content_html": "<p id=\"9d98\" class=\"fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp\" >I have a docker container that works fine on my machine if I run it with <code>docker-compose</code> but it does not work well with running it using <code>docker run</code> , However, when I create a container to put it on Google Cloud, the Google Cloud SDK is not using <code>docker-compose</code>, here is how I fixed this problem.<br><br>First, you need to resize the hard disk. The hard disk that is being used by your instance is probably not big enough. Here I increase mine to 30GB. The hard disk name is the same as the instance name (do not add a new disk, it will not increase your root partition):<br><br><code class=\"language-bash\">gcloud compute disks resize example-disk — size 250</code><br><br>Add your ssh public key to your instance so that you can ssh into your account from your computer.<br><br>After increasing the disk space, copy all your files into the server using <code>scp</code>.<br><br><code class=\"language-bash\">scp * &lt;external_ip_address&gt;:~</code><br><br>Then ssh into your instance and make sure all your files are there.<br><br>Now you need to run <code>docker-compose</code> but it doesn’t exist in Google Cloud Container OS. To do that you need to first create a docker-compose container:<br><br><code class=\"language-bash\">docker run docker/compose:1.13.0 version</code><br><br>and then run this command:<br><br><code class=\"language-bash\">docker run --rm \\</code><br><code class=\"language-bash\"> -v /var/run/docker.sock:/var/run/docker.sock \\</code><br><code class=\"language-bash\"> -v \"$PWD:$PWD\" \\</code><br><code class=\"language-bash\"> -w=\"$PWD\" \\</code><br><code class=\"language-bash\"> docker/compose:1.13.0 up</code><br><br>I copied these lines from <a href=\"https://cloud.google.com/community/tutorials/docker-compose-on-container-optimized-os\">this tutorial</a>. But, I changed the second command because I kept getting an error saying “can not make directory /rootfs, filesystem is read-only”. That’s why I removed <code>rootfs</code> from my commands.<br><br>After running this command, your docker container should start and should work fine.</p>",
+            "content_html": "<p id=\"9d98\" class=\"fs ft by ar fu b fv fw fx fy fz ga gb gc gd ge gf dp\" data-selectable-paragraph=\"\">I have a docker container that works fine on my machine if I run it with <code>docker-compose</code> but it does not work well with running it using <code>docker run</code> , However, when I create a container to put it on Google Cloud, the Google Cloud SDK is not using <code>docker-compose</code>, here is how I fixed this problem.<br><br>First, you need to resize the hard disk. The hard disk that is being used by your instance is probably not big enough. Here I increase mine to 30GB. The hard disk name is the same as the instance name (do not add a new disk, it will not increase your root partition):<br><br><code class=\"language-bash\">gcloud compute disks resize example-disk — size 250</code><br><br>Add your ssh public key to your instance so that you can ssh into your account from your computer.<br><br>After increasing the disk space, copy all your files into the server using <code>scp</code>.<br><br><code class=\"language-bash\">scp * &lt;external_ip_address&gt;:~</code><br><br>Then ssh into your instance and make sure all your files are there.<br><br>Now you need to run <code>docker-compose</code> but it doesn’t exist in Google Cloud Container OS. To do that you need to first create a docker-compose container:<br><br><code class=\"language-bash\">docker run docker/compose:1.13.0 version</code><br><br>and then run this command:<br><br><code class=\"language-bash\">docker run --rm \\</code><br><code class=\"language-bash\"> -v /var/run/docker.sock:/var/run/docker.sock \\</code><br><code class=\"language-bash\"> -v \"$PWD:$PWD\" \\</code><br><code class=\"language-bash\"> -w=\"$PWD\" \\</code><br><code class=\"language-bash\"> docker/compose:1.13.0 up</code><br><br>I copied these lines from <a href=\"https://cloud.google.com/community/tutorials/docker-compose-on-container-optimized-os\">this tutorial</a>. But, I changed the second command because I kept getting an error saying “can not make directory /rootfs, filesystem is read-only”. That’s why I removed <code>rootfs</code> from my commands.<br><br>After running this command, your docker container should start and should work fine.</p>",
             "author": {
                 "name": "Hojjat"
             },
@@ -155,22 +170,6 @@
             ],
             "date_published": "2019-04-11T16:50:00-06:00",
             "date_modified": "2020-03-23T17:02:01-06:00"
-        },
-        {
-            "id": "https://hojjatabdollahi.github.io/an-alternative-to-watch-command-in-windows.html",
-            "url": "https://hojjatabdollahi.github.io/an-alternative-to-watch-command-in-windows.html",
-            "title": "An alternative to &quot;watch&quot; command in Windows",
-            "summary": "When I’m training a network in Linux, I always have a panel in my tmux that is showing the GPU usage over all 4 GPUs. To do so, I use nvidia-smi command and to keep it updating I use watch command. So, all I need&hellip;",
-            "content_html": "When I’m training a network in Linux, I always have a panel in my tmux that is showing the GPU usage over all 4 GPUs. To do so, I use <code>nvidia-smi</code> command and to keep it updating I use <code>watch</code> command. So, all I need to write is:<br><br><code class=\"language-bash\">watch nvidia-smi</code><br><br>In windows you do not have the <code>watch</code> command and note that <code>nvidia-smi</code> might not be part of your <code>path</code> but if you have installed everything correctly, it should be here:<br><br><code>C:\\Program Files\\NVIDIA Corporation\\NVSMI</code><br><br>So, the alternative to <code>watch</code> in windows <strong>Powershell</strong> is using the while command:<br><br><code class=\"language-clike\">while (1) {cls; .\\nvidia-smi.exe; sleep 5}</code><br><br>However, <a href=\"https://github.com/markwragg/PowerShell-Watch\">someone made a module for Powershell</a>, but I find it inconvenient.",
-            "author": {
-                "name": "Hojjat"
-            },
-            "tags": [
-                   "windows",
-                   "powershell"
-            ],
-            "date_published": "2019-02-11T16:54:00-07:00",
-            "date_modified": "2020-03-23T17:02:20-06:00"
         }
     ]
 }
