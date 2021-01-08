@@ -3,7 +3,7 @@
     <title>Hojjat&#x27;s Blog</title>
     <link href="https://hojjatabdollahi.github.io/feed.xml" rel="self" />
     <link href="https://hojjatabdollahi.github.io" />
-    <updated>2021-01-05T13:57:02-07:00</updated>
+    <updated>2021-01-08T08:41:57-07:00</updated>
     <author>
         <name>Hojjat</name>
     </author>
@@ -19,7 +19,7 @@
             <category term="sh"/>
             <category term="linux"/>
 
-        <updated>2021-01-05T13:57:02-07:00</updated>
+        <updated>2021-01-08T08:41:57-07:00</updated>
             <summary>
                 <![CDATA[
                     Interception ToolsWhat is Interception Tools?It's a software that lives between the kernel and the X server. It processes the input events and can modify it. You can modify the keyboard layout, or make the keyboard act like a mouse, or... Pressing Esc is hard. Pressing&hellip;
@@ -50,15 +50,21 @@
 <pre>- JOB: intercept -g $DEVNODE | caps2esc | uinput -d $DEVNODE<br>  DEVICE:<br>    LINK: /dev/input/by-id/usb-Cooler_Master_Technology_Inc._MasterKeys_S-event-kbd</pre>
 <p>In this case I am referring to my exact keyboard. You can find your keyboard using:</p>
 <p><code class="language-bash">ls /dev/input/by-id | grep kbd</code></p>
+<p>My laptop keyboard was under:</p>
+<p><code class="language-bash">ls /dev/input/by-path | grep kbd</code></p>
 <p>That being said, it is probably possible to use a more general config like this:</p>
 <pre>- JOB: "intercept -g $DEVNODE | caps2esc | uinput -d $DEVNODE"<br>  DEVICE:<br>    EVENTS:<br>      EV_KEY: [KEY_CAPSLOCK, KEY_ESC]</pre>
 <p>Now that the configuration is done we need to add udevmon to the services so that it starts with the system.</p>
 <p>Open this file:</p>
 <p><code class="language-bash">sudo vim /etc/systemd/system/udevmon.service</code></p>
 <p>and copy the following in it:</p>
-<pre>[Unit]<br>Description=udevmon<br>Wants=systemd-udev-settle.service<br>After=systemd-udev-settle.service<br><br>[Service]<br>ExecStart=/usr/bin/nice -n -20 /usr/local/bin/udevmon <br><br>[Install]<br>WantedBy=multi-user.targetWantedBy=multi-user.target</pre>
+<pre>[Unit]<br>Description=udevmon<br>Wants=systemd-udev-settle.service<br>After=systemd-udev-settle.service<br><br>[Service]<br>ExecStart=/usr/bin/nice -n -20 /usr/local/bin/udevmon <br><br>[Install]<br>WantedBy=multi-user.target</pre>
 <p>Make sure that the address for `udevmon` is correct:</p>
 <p><code class="language-bash">which udevmon</code></p>
+<p>Make sure to enable this service:</p>
+<p><code class="language-bash">sudo systemctl enable --now udevmon</code></p>
+<p>Also make sure to add the user to all the groups that are relevant. (not sure which one is relevant):</p>
+<pre><code class="language-bash">sudo usermod -a -G sudo $USER</code><br><code class="language-bash">sudo gpasswd -a $USER input</code><br><code class="language-bash">usermod -a -G plugdev $USER</code></pre>
 <h2>Usage</h2>
 <p>After a reboot, the Esc key acts like CapsLock key. And the CapsLock key acts like both the Esc key and the Ctrl key. If you tap the CapsLock key, it will register as Esc, and if you hold it down and press another key it will register it as Ctrl and perform a combination. So, for example CapsLock+C will copy, but tapping the CapsLock key, will be just an Esc event.</p>
             ]]>
